@@ -9,7 +9,7 @@ def get_actual_label(predicted: int, correct: int) -> int:
 
 
 if __name__ == '__main__':
-    os.chdir('Source Code/dataset')
+    os.chdir('Data')
     out_dir = Path('RQ_1_mod')
     out_dir.mkdir(exist_ok=True)
 
