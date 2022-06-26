@@ -1,0 +1,35 @@
+package:
+  name: pylucene
+  version: 8.11.0
+
+build:
+  number: 0
+
+source:
+  fn: "pylucene-8.11.0-src.tar.gz"
+  url: "https://dlcdn.apache.org/lucene/pylucene/pylucene-8.11.0-src.tar.gz"
+  sha256: "70894afe0a1d48efa404adb2a4d6f6f951d9f3d193027e649c536bbf1b9304aa"
+  patches:
+    - makefile.patch
+
+requirements:
+  build:
+    - python
+    - "openjdk 8*"
+    - jcc
+    - ant
+  run:
+    - python
+    - "openjdk 8*"
+    - jcc
+
+#test:
+#  commands:
+#    - export LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/jre/lib:$PREFIX/jre/lib/amd64:$PREFIX/jre/lib/amd64/server:$LD_LIBRARY_PATH
+#    - export LD_LIBRARY_PATH=$PREFIX/lib/python2.7/site-packages:$LD_LIBRARY_PATH
+#    - printenv
+#    - python -c 'import lucene; lucene.initVM()'
+
+about:
+  home: https://lucene.apache.org/pylucene/
+  license: Apache

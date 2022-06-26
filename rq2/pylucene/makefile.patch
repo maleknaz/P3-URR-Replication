@@ -1,0 +1,32 @@
+--- Makefile
++++ Makefile
+@@ -43,6 +43,11 @@
+ # limit.
+ #
+
++PREFIX_PYTHON=$(PREFIX)
++ANT=$(JAVA_HOME)/bin/ant
++JCC=$(PYTHON) -m jcc --shared
++NUM_FILES=8
++
+ # Mac OS X 11.4 (64-bit intel Python 3.9, Java 17)
+ #PREFIX_PYTHON=/Users/vajda/apache/pylucene/_install3
+ #ANT=/Users/vajda/tmp/apache-ant-1.9.3/bin/ant
+@@ -423,12 +428,12 @@
+
+ TEST_DIR:=`$(PYTHON) -c "import sys; print('test%s' %(sys.version_info[0]))"`
+
+-install-test:
+-	mkdir -p $(BUILD_TEST)
+-	PYTHONPATH=$(BUILD_TEST) $(GENERATE) --install $(DEBUG_OPT) --install-dir $(BUILD_TEST)
++# install-test:
++# 	mkdir -p $(BUILD_TEST)
++# 	PYTHONPATH=$(BUILD_TEST) $(GENERATE) --install $(DEBUG_OPT) --install-dir $(BUILD_TEST)
+
+-test: install-test
+-	find $(TEST_DIR) -name 'test_*.py' | PYTHONPATH=$(BUILD_TEST) xargs -t -n 1 $(PYTHON)
++# test: install-test
++# 	find $(TEST_DIR) -name 'test_*.py' | PYTHONPATH=$(BUILD_TEST) xargs -t -n 1 $(PYTHON)
+
+ ARCHIVE=pylucene-$(VERSION)-src.tar.gz
+

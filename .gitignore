@@ -151,3 +151,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 rq2/data
+rq2/data-lucene
+rq2/reviews.csv
+rq2/reviews.processed.csv
+Data/
+Source Code/dataset
