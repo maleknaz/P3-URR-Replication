@@ -11,7 +11,7 @@ import requests
 
 
 def all_apps() -> list[str]:
-    df = pandas.read_csv('reviews.csv')
+    df = pandas.read_csv('../Data/reviews.csv')
     return list(set(df.app))
 
 
